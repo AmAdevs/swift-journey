@@ -19,7 +19,7 @@ class RestaurantTableViewController: UITableViewController {
     
     var cellId = "cell"
     
-    var restaurant: [Restaurant] =  [
+    var restaurants: [Restaurant] =  [
         
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", image: "cafedeadend", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image: "homei", isVisited: false),
@@ -62,11 +62,11 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return restaurant.count
+        return restaurants.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurant.count
+        return restaurants.count
     }
     
     
@@ -74,13 +74,13 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! RestaurantTableViewCell
         
-        cell.nameLabel.text = restaurant[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(named: restaurant[indexPath.row].image)
-        cell.locationType.text = restaurant[indexPath.row].location
-        cell.typeLabel.text = restaurant[indexPath.row].type
+        cell.nameLabel.text = restaurants[indexPath.row].name
+        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        cell.locationType.text = restaurants[indexPath.row].location
+        cell.typeLabel.text = restaurants[indexPath.row].type
         
         //cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
-        cell.heartImageView.isHidden = restaurant[indexPath.row].isVisited ? false : true
+        cell.heartImageView.isHidden = restaurants[indexPath.row].isVisited ? false : true
     
         
         
@@ -177,7 +177,7 @@ class RestaurantTableViewController: UITableViewController {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (UIContextualAction, UIView, completionHandler) in
 
             // Delete the row from the data source
-            self.restaurant.remove(at: indexPath.row)
+            self.restaurants.remove(at: indexPath.row)
 //            self.restaurantNames.remove(at: indexPath.row)
 //            self.restaurantLocations.remove(at: indexPath.row)
 //            self.restaurantTypes.remove(at: indexPath.row)
@@ -190,11 +190,11 @@ class RestaurantTableViewController: UITableViewController {
         }
 
         let shareAction = UIContextualAction(style: .normal, title: "Share") { (UIContextualAction, UIView, completionHandler) in
-            let defaultText = "Just checking in at " + self.restaurant[indexPath.row].name
+            let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name
 //            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             let activityController: UIActivityViewController
 
-            if let imageToShare = UIImage(named: self.restaurant[indexPath.row].image) {
+            if let imageToShare = UIImage(named: self.restaurants[indexPath.row].image) {
                 activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
             } else {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
@@ -253,10 +253,7 @@ class RestaurantTableViewController: UITableViewController {
         if segue.identifier == "restaurantShowDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! restaurantDetailViewController
-                destinationController.restaurant.image = restaurant[indexPath.row].image
-                destinationController.restaurant.name = restaurant[indexPath.row].name
-                destinationController.restaurant.type = restaurant[indexPath.row].type
-                destinationController.restaurant.location = restaurant[indexPath.row].location
+                    destinationController.restaurant = restaurants[indexPath.row]
                 
             }
         }

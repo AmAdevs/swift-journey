@@ -41,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B2C392E22DB5FE900FB8FEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B2C392C22DB547400FB8FEB /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B2C392F22DB5FEE00FB8FEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B2D3B6522D874B6002C9CD9 /* RestaurantTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B2C393022DB5FF400FB8FEB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B2D3B6322D86C4F002C9CD9 /* RestaurantTableViewController.swift */,
+				6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		6B2D3B4522D86C1E002C9CD9 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +85,10 @@
 		6B2D3B5022D86C1E002C9CD9 /* FoodPinNavigationOOP */ = {
 			isa = PBXGroup;
 			children = (
+				6B2C392E22DB5FE900FB8FEB /* Model */,
+				6B2C392F22DB5FEE00FB8FEB /* View */,
+				6B2C393022DB5FF400FB8FEB /* Controller */,
 				6B2D3B5122D86C1E002C9CD9 /* AppDelegate.swift */,
-				6B2D3B6322D86C4F002C9CD9 /* RestaurantTableViewController.swift */,
-				6B2D3B6522D874B6002C9CD9 /* RestaurantTableViewCell.swift */,
-				6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */,
-				6B2C392C22DB547400FB8FEB /* Restaurant.swift */,
 				6B2D3B5522D86C1E002C9CD9 /* Main.storyboard */,
 				6B2D3B5822D86C20002C9CD9 /* Assets.xcassets */,
 				6B2D3B5A22D86C20002C9CD9 /* LaunchScreen.storyboard */,

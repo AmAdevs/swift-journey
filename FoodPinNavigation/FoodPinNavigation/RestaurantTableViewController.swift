@@ -148,56 +148,56 @@ class RestaurantTableViewController: UITableViewController {
 ////
 ////    }
 //
-//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (UIContextualAction, UIView, completionHandler) in
-//
-//            // Delete the row from the data source
-//            self.restaurantNames.remove(at: indexPath.row)
-//            self.restaurantLocations.remove(at: indexPath.row)
-//            self.restaurantTypes.remove(at: indexPath.row)
-//            self.restaurantIsVisited.remove(at: indexPath.row)
-//            self.restaurantImages.remove(at: indexPath.row)
-//
-//            self.tableView.deleteRows(at: [indexPath], with: .fade)
-//
-//            completionHandler(true)
-//        }
-//
-//        let shareAction = UIContextualAction(style: .normal, title: "Share") { (UIContextualAction, UIView, completionHandler) in
-//            let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
-////            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-//            let activityController: UIActivityViewController
-//
-//            if let imageToShare = UIImage(named: self.restaurantImages[indexPath.row]) {
-//                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
-//            } else {
-//                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-//            }
-//
-//            // set popOver to when use iPad
-//            if let popoverController = activityController.popoverPresentationController {
-//                if let cell = tableView.cellForRow(at: indexPath) {
-//                    popoverController.sourceView = cell
-//                    popoverController.sourceRect = cell.bounds
-//                }
-//            }
-//
-//
-//            self.present(activityController, animated: true, completion: nil)
-//            completionHandler(true)
-//        }
-//
-//        deleteAction.backgroundColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1)
-//        deleteAction.image = UIImage(named: "delete")
-//
-//        shareAction.backgroundColor = UIColor(red: 254/255, green: 149/255, blue: 38/255, alpha: 1)
-//        shareAction.image = UIImage(named: "share")
-//
-//        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
-//
-//        return swipeConfiguration
-//
-//    }
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (UIContextualAction, UIView, completionHandler) in
+
+            // Delete the row from the data source
+            self.restaurantNames.remove(at: indexPath.row)
+            self.restaurantLocations.remove(at: indexPath.row)
+            self.restaurantTypes.remove(at: indexPath.row)
+            self.restaurantIsVisited.remove(at: indexPath.row)
+            self.restaurantImages.remove(at: indexPath.row)
+
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+
+            completionHandler(true)
+        }
+
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (UIContextualAction, UIView, completionHandler) in
+            let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
+//            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            let activityController: UIActivityViewController
+
+            if let imageToShare = UIImage(named: self.restaurantImages[indexPath.row]) {
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            } else {
+                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            }
+
+            // set popOver to when use iPad
+            if let popoverController = activityController.popoverPresentationController {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
+
+
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
+        }
+
+        deleteAction.backgroundColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1)
+        deleteAction.image = UIImage(named: "delete")
+
+        shareAction.backgroundColor = UIColor(red: 254/255, green: 149/255, blue: 38/255, alpha: 1)
+        shareAction.image = UIImage(named: "share")
+
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+
+        return swipeConfiguration
+
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -51,6 +51,7 @@ class RestaurantTableViewController: UITableViewController {
 //
 //    var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    // MARK: -View Controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,8 @@ class RestaurantTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
+    // MARK: UITableViewDataSource Protocol
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return restaurants.count
     }

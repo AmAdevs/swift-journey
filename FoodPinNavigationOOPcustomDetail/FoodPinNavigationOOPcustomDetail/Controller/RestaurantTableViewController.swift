@@ -232,8 +232,8 @@ class RestaurantTableViewController: UITableViewController {
         let checkInAction = UIContextualAction(style: .normal, title: "Check-in") { (UIContextualAction, UIView, CompletionHandler) in
             
             let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
-            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
-            cell.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row] ? false : true
+            self.restaurants[indexPath.row].isVisited = self.restaurants[indexPath.row].isVisited ? false : true
+            cell.heartImageView.isHidden = self.restaurants[indexPath.row].isVisited ? false : true
             
             
             
@@ -241,7 +241,7 @@ class RestaurantTableViewController: UITableViewController {
             CompletionHandler(true)
         }
         
-        let checkInIcon = restaurantIsVisited[indexPath.row] ? "undo" : "tick"
+        let checkInIcon = restaurants[indexPath.row].isVisited ? "undo" : "tick"
         checkInAction.backgroundColor = UIColor(red: 38/255, green: 162/255, blue: 78/255, alpha: 1)
         checkInAction.image = UIImage(named: checkInIcon)
         

@@ -10,10 +10,8 @@ import UIKit
 
 class restaurantDetailViewController: UIViewController {
 
-    @IBOutlet weak var restaurantImageView: UIImageView!
-    @IBOutlet weak var restaurantName: UILabel!
-    @IBOutlet weak var restaurantType: UILabel!
-    @IBOutlet weak var restaurantLocation: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: RestaurantDetailHeaderView!
     
 //    var restaurantImageName = ""
 //    var restaurantNameText = ""
@@ -25,11 +23,15 @@ class restaurantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restaurantImageView.image = UIImage(named: restaurant.image)
-        restaurantName.text = restaurant.name
-        restaurantType.text = restaurant.type
-        restaurantLocation.text = restaurant.location
         navigationItem.largeTitleDisplayMode = .never
+
+        headerView.nameLabel.text = restaurant.name
+        headerView.typeLabel.text = restaurant.type
+        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
+        
+        
+        
     }
     
 

@@ -35,6 +35,14 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
         headerView.headerImageView.image = UIImage(named: restaurant.image)
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
         
+        // Custom NavigationBar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+    
+        tableView.contentInsetAdjustmentBehavior = .never
+        
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

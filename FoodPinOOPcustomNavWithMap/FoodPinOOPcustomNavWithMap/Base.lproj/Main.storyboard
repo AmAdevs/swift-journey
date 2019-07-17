@@ -276,29 +276,30 @@
                                             <outlet property="titleLabel" destination="8Ry-xy-mQd" id="v66-aG-DVg"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="328" id="S0b-Xw-gLQ" userLabel="RestaurantDetailMapView" customClass="RestaurantDetailMapCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="510" width="375" height="328"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="218" id="S0b-Xw-gLQ" userLabel="RestaurantDetailMapView" customClass="RestaurantDetailMapCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="510" width="375" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S0b-Xw-gLQ" id="HV6-0U-LNY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="327.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="217.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTM-s5-V2A">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="327.5"/>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTM-s5-V2A">
+                                                    <rect key="frame" x="0.0" y="2.5" width="375" height="215"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="327.5" id="r21-XH-fhb"/>
+                                                        <constraint firstAttribute="height" constant="215" id="04t-AP-hVJ"/>
                                                     </constraints>
                                                 </mapView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="KTM-s5-V2A" secondAttribute="bottom" id="AoX-eM-1gt"/>
-                                                <constraint firstItem="KTM-s5-V2A" firstAttribute="leading" secondItem="HV6-0U-LNY" secondAttribute="leading" id="eD7-Bn-FJm"/>
-                                                <constraint firstAttribute="trailing" secondItem="KTM-s5-V2A" secondAttribute="trailing" id="eXf-uQ-epz"/>
-                                                <constraint firstItem="KTM-s5-V2A" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HV6-0U-LNY" secondAttribute="top" id="znc-4j-sqg"/>
+                                                <constraint firstAttribute="bottom" secondItem="KTM-s5-V2A" secondAttribute="bottom" id="B4P-AS-1Ty"/>
+                                                <constraint firstItem="KTM-s5-V2A" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HV6-0U-LNY" secondAttribute="top" id="QVt-WY-Ief"/>
+                                                <constraint firstItem="KTM-s5-V2A" firstAttribute="leading" secondItem="HV6-0U-LNY" secondAttribute="leading" id="chi-uL-d1K"/>
+                                                <constraint firstAttribute="trailing" secondItem="KTM-s5-V2A" secondAttribute="trailing" id="icm-UU-cgZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mapView" destination="KTM-s5-V2A" id="9QV-8G-jKo"/>
+                                            <segue destination="VjM-BD-yYU" kind="show" id="0DI-sf-uOz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -322,6 +323,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPv-Pl-6f2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1994.4000000000001" y="286.95652173913044"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="58g-Cp-19V">
+            <objects>
+                <viewController id="VjM-BD-yYU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZE7-vC-gip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uQ4-Wi-h2B">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uQ4-Wi-h2B" firstAttribute="trailing" secondItem="rpT-C2-EkX" secondAttribute="trailing" id="2Mz-LX-Kj0"/>
+                            <constraint firstItem="uQ4-Wi-h2B" firstAttribute="leading" secondItem="rpT-C2-EkX" secondAttribute="leading" id="EAe-5V-ihX"/>
+                            <constraint firstItem="uQ4-Wi-h2B" firstAttribute="bottom" secondItem="rpT-C2-EkX" secondAttribute="bottom" id="iwx-xo-FT9"/>
+                            <constraint firstItem="uQ4-Wi-h2B" firstAttribute="top" secondItem="ZE7-vC-gip" secondAttribute="top" id="zhy-af-9jx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rpT-C2-EkX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdH-Ad-UkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2857" y="289"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mIg-qk-A9H">

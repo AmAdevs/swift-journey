@@ -25,26 +25,40 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         navigationItem.largeTitleDisplayMode = .never
 
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.separatorStyle = .none
-        
+       
+       
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
         headerView.headerImageView.image = UIImage(named: restaurant.image)
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.separatorStyle = .none
+        
+        
         // Custom NavigationBar
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
-    
-        tableView.contentInsetAdjustmentBehavior = .never
+       
         
+        tableView.contentInsetAdjustmentBehavior = .never
+        navigationController?.hidesBarsOnSwipe = false
+   
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+
+    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

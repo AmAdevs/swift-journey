@@ -299,7 +299,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mapView" destination="KTM-s5-V2A" id="9QV-8G-jKo"/>
-                                            <segue destination="VjM-BD-yYU" kind="show" id="0DI-sf-uOz"/>
+                                            <segue destination="VjM-BD-yYU" kind="show" identifier="showMap" id="0DI-sf-uOz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -9,6 +9,10 @@
 import UIKit
 
 class restaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: RestaurantDetailHeaderView!

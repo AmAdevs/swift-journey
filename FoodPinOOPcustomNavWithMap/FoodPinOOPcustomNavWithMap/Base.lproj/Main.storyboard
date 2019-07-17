@@ -324,10 +324,10 @@
             </objects>
             <point key="canvasLocation" x="1994.4000000000001" y="286.95652173913044"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="58g-Cp-19V">
             <objects>
-                <viewController id="VjM-BD-yYU" sceneMemberID="viewController">
+                <viewController id="VjM-BD-yYU" customClass="MapViewController" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZE7-vC-gip">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,6 +345,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rpT-C2-EkX"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="uQ4-Wi-h2B" id="cnA-PX-4eu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdH-Ad-UkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

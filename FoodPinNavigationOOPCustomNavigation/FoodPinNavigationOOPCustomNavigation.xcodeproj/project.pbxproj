@@ -28,6 +28,8 @@
 		6B2D3B6622D874B6002C9CD9 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D3B6522D874B6002C9CD9 /* RestaurantTableViewCell.swift */; };
 		6B3CF28B22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CF28A22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift */; };
 		6B5BA11822DAE7000091091A /* restaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */; };
+		6B648E1122DEF086004B02FF /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B648E1022DEF086004B02FF /* UIColor+Ext.swift */; };
+		6B648E1322DEF52D004B02FF /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B648E1222DEF52D004B02FF /* UINavigationController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		6B2D3B6522D874B6002C9CD9 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		6B3CF28A22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurantDetailViewController.swift; sourceTree = "<group>"; };
+		6B648E1022DEF086004B02FF /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		6B648E1222DEF52D004B02FF /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		6B2D3B5022D86C1E002C9CD9 /* FoodPinNavigationOOPCustomNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				6B648E0F22DEF06A004B02FF /* Extensions */,
 				6B2C393122DB72F100FB8FEB /* Font */,
 				6B2C392E22DB5FE900FB8FEB /* Model */,
 				6B2C392F22DB5FEE00FB8FEB /* View */,
@@ -142,6 +147,15 @@
 				6B2D3B5D22D86C20002C9CD9 /* Info.plist */,
 			);
 			path = FoodPinNavigationOOPCustomNavigation;
+			sourceTree = "<group>";
+		};
+		6B648E0F22DEF06A004B02FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B648E1022DEF086004B02FF /* UIColor+Ext.swift */,
+				6B648E1222DEF52D004B02FF /* UINavigationController+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,8 @@
 				6B2D3B6622D874B6002C9CD9 /* RestaurantTableViewCell.swift in Sources */,
 				6B2D3B6422D86C4F002C9CD9 /* RestaurantTableViewController.swift in Sources */,
 				6B3CF28B22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift in Sources */,
+				6B648E1322DEF52D004B02FF /* UINavigationController+Ext.swift in Sources */,
+				6B648E1122DEF086004B02FF /* UIColor+Ext.swift in Sources */,
 				6B5BA11822DAE7000091091A /* restaurantDetailViewController.swift in Sources */,
 				6B2D3B5222D86C1E002C9CD9 /* AppDelegate.swift in Sources */,
 			);

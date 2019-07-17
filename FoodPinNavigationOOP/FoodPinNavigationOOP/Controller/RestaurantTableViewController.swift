@@ -56,7 +56,7 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.showsVerticalScrollIndicator = false
+        
         tableView.cellLayoutMarginsFollowReadableWidth = true   //set screen ipad NORMAL tableCell
         
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -65,7 +65,7 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: UITableViewDataSource Protocol
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return restaurants.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

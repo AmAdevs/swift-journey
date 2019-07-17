@@ -104,11 +104,18 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
                
                 cell.selectionStyle = .none
-                
+                cell.configure(location: restaurant.location)
             return cell
             
             default:
                 fatalError("Failed to instantiate the table view cell for detail view count roller")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            destinationController.restaurant = restaurant
         }
     }
     

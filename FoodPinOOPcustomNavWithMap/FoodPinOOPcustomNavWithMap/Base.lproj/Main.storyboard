@@ -17,13 +17,13 @@
         <!--FoodPin-->
         <scene sceneID="EKV-71-zk8">
             <objects>
-                <tableViewController id="8eG-M6-NCy" customClass="RestaurantTableViewController" customModule="FoodPinNavigationOOPCustomNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8eG-M6-NCy" customClass="RestaurantTableViewController" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L1Z-z0-5dI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="82" id="G5g-zZ-Z0u" customClass="RestaurantTableViewCell" customModule="FoodPinNavigationOOPCustomNavigation" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="82" id="G5g-zZ-Z0u" customClass="RestaurantTableViewCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5g-zZ-Z0u" id="0cG-63-eov">
@@ -106,15 +106,15 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="tL3-zD-Zbf">
             <objects>
-                <viewController id="ld6-eQ-omy" customClass="restaurantDetailViewController" customModule="FoodPinNavigationOOPCustomNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ld6-eQ-omy" customClass="restaurantDetailViewController" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dQu-z5-yVd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MFI-C2-0rP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="2C4-ls-daW" userLabel="Header View" customClass="RestaurantDetailHeaderView" customModule="FoodPinNavigationOOPCustomNavigation" customModuleProvider="target">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="2C4-ls-daW" userLabel="Header View" customClass="RestaurantDetailHeaderView" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -176,7 +176,7 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="MvU-Ra-1oe" userLabel="RestaurantDetailIconText" customClass="RestaurantDetailIconTextCell" customModule="FoodPinNavigationOOPCustomNavigation" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="MvU-Ra-1oe" userLabel="RestaurantDetailIconText" customClass="RestaurantDetailIconTextCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="378" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MvU-Ra-1oe" id="xaC-hP-fpt">
@@ -214,7 +214,7 @@
                                             <outlet property="shortTextLabel" destination="Xip-pP-sF9" id="n3O-q9-gCT"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="5Cd-aW-qMn" userLabel="RestaurantDetailText" customClass="RestaurantDetailTextCell" customModule="FoodPinNavigationOOPCustomNavigation" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="5Cd-aW-qMn" userLabel="RestaurantDetailText" customClass="RestaurantDetailTextCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="422" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Cd-aW-qMn" id="1Xp-qy-U8v">
@@ -239,6 +239,65 @@
                                             <outlet property="descriptionLabel" destination="ecg-1l-Im9" id="QQF-BN-0dz"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nDR-eY-PUl" userLabel="RestaurantDetailText" customClass="RestaurantDetailTextCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="466" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nDR-eY-PUl" id="eFs-A3-FjA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-FM-8Df">
+                                                    <rect key="frame" x="18" y="5" width="339" height="26.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscription Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ry-xy-mQd" userLabel="Subsciption Title">
+                                                            <rect key="frame" x="0.0" y="0.0" width="339" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qD5-nE-yDR" userLabel="Separator">
+                                                            <rect key="frame" x="0.0" y="25.5" width="339" height="1"/>
+                                                            <color key="backgroundColor" red="0.92156862745098034" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="goV-YW-taI"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="HwI-FM-8Df" secondAttribute="trailing" constant="18" id="32f-Wh-rEz"/>
+                                                <constraint firstItem="HwI-FM-8Df" firstAttribute="leading" secondItem="eFs-A3-FjA" secondAttribute="leading" constant="18" id="5fp-4M-nDI"/>
+                                                <constraint firstAttribute="bottom" secondItem="HwI-FM-8Df" secondAttribute="bottom" constant="12" id="BxZ-xQ-HDd"/>
+                                                <constraint firstItem="HwI-FM-8Df" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eFs-A3-FjA" secondAttribute="top" constant="5" id="Ebl-Tp-C5B"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="8Ry-xy-mQd" id="Ueu-RI-xAv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="328" id="S0b-Xw-gLQ" userLabel="RestaurantDetailText" customClass="RestaurantDetailTextCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="510" width="375" height="328"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S0b-Xw-gLQ" id="HV6-0U-LNY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="327.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTM-s5-V2A">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="327.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="327.5" id="r21-XH-fhb"/>
+                                                    </constraints>
+                                                </mapView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="KTM-s5-V2A" secondAttribute="bottom" id="AoX-eM-1gt"/>
+                                                <constraint firstItem="KTM-s5-V2A" firstAttribute="leading" secondItem="HV6-0U-LNY" secondAttribute="leading" id="eD7-Bn-FJm"/>
+                                                <constraint firstAttribute="trailing" secondItem="KTM-s5-V2A" secondAttribute="trailing" id="eXf-uQ-epz"/>
+                                                <constraint firstItem="KTM-s5-V2A" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HV6-0U-LNY" secondAttribute="top" id="znc-4j-sqg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -251,6 +310,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G45-v4-Sjo"/>
                     </view>
+                    <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="headerView" destination="2C4-ls-daW" id="iiS-fM-mda"/>
                         <outlet property="tableView" destination="MFI-C2-0rP" id="Ujr-eN-n5p"/>
@@ -258,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPv-Pl-6f2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994.4000000000001" y="287.40629685157421"/>
+            <point key="canvasLocation" x="1994.4000000000001" y="286.95652173913044"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mIg-qk-A9H">

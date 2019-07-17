@@ -258,7 +258,7 @@ class RestaurantTableViewController: UITableViewController {
         }
         
         let checkInIcon = restaurants[indexPath.row].isVisited ? "undo" : "tick"
-        checkInAction.backgroundColor = UIColor(red: 38/255, green: 162/255, blue: 78/255, alpha: 1)
+        checkInAction.backgroundColor = UIColor(red: 38, green: 162, blue: 78)
         checkInAction.image = UIImage(named: checkInIcon)
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])

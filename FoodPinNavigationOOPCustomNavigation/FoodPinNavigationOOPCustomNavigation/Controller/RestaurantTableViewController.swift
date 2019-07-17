@@ -11,11 +11,6 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    var restaurantIsVisited = Array(repeating: false, count: 21)
     
     var cellId = "cell"
     
@@ -68,12 +63,25 @@ class RestaurantTableViewController: UITableViewController {
         if let customFont = UIFont(name: "Rubik-Medium", size: 40.0) {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: customFont, NSAttributedString.Key.foregroundColor: UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1)]
         }
+        
+        navigationController?.hidesBarsOnSwipe = true
+    
+        
+       
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = true
+    }
+
 
     // MARK: UITableViewDataSource Protocol
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return restaurants.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

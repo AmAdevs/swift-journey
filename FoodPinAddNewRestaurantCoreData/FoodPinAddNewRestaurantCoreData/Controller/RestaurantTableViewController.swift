@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     
     var cellId = "cell"
@@ -17,6 +18,8 @@ class RestaurantTableViewController: UITableViewController {
     var restaurants: [RestaurantMO] = []
     
     @IBOutlet weak var emptyRestaurantView: UIView!
+    
+    var fetchResultController: NSFetchedResultsController<RestaurantMO>!
     
     // MARK: -View Controller life cycle
     
@@ -44,6 +47,26 @@ class RestaurantTableViewController: UITableViewController {
         }
         
         navigationController?.hidesBarsOnSwipe = true
+        
+        // Fetch data from data store
+        let fetchRequest: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest()
+        let sortDesriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDesriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            
+            do {
+                try fetchResultController.performFetch()
+                if let fetchedObject = fetchResultController.fetchedObjects {
+                    restaurants = fetchedObject
+                }
+            } catch {
+                print(error)
+            }
+        }
     
         
        
@@ -95,92 +118,6 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let optionMenu = UIAlertController(title: "What's up", message: "What do you want to do?", preferredStyle: UIAlertController.Style.actionSheet)
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//
-//        optionMenu.addAction(cancelAction)
-//
-//
-//        // call function
-//        let callActionHandler = { (action: UIAlertAction!) -> Void in
-//            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry laetr.", preferredStyle: .alert)
-//            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//
-//            self.present(alertMessage, animated: true, completion: nil)
-//
-//        }
-//
-//        let callAction = UIAlertAction(title: "Call" + " 123-00-\(indexPath.row)", style: .default, handler: callActionHandler)
-//        optionMenu.addAction(callAction)
-//
-//
-//        let checkInActionTitle = restaurantIsVisited[indexPath.row] ? "undo check in" : "check in"
-//
-//        // Check-in action
-//        let checkInAction = UIAlertAction(title: checkInActionTitle, style: .default) { (action: UIAlertAction!) in
-//
-//            // for Standard of iPhone
-////            let cell = tableView.cellForRow(at: indexPath)
-////            cell?.accessoryType = .checkmark
-////            self.restaurantIsVisited[indexPath.row] = true
-//            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
-//
-//
-//            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
-//
-//            cell.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row] ? false : true
-//
-//            print("image isHidden",  self.restaurantIsVisited[indexPath.row])
-//
-//
-//
-//        }
-//
-//        optionMenu.addAction(checkInAction)
-//
-//
-//        present(optionMenu, animated: true, completion: nil)
-//
-//        tableView.deselectRow(at: indexPath, animated: false)
-//
-//        // popover of iPad
-//        if let popoverController = optionMenu.popoverPresentationController {
-//            if let cell = tableView.cellForRow(at: indexPath) {
-//                popoverController.sourceView = cell
-//                popoverController.sourceRect = cell.bounds
-//            }
-//        }
-//
-//
-//    }
-//
-//
-////    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-////
-////        if editingStyle == .delete {
-////            // Delete the row from the data source
-////            restaurantNames.remove(at: indexPath.row)
-////            restaurantLocations.remove(at: indexPath.row)
-////            restaurantTypes.remove(at: indexPath.row)
-////            restaurantIsVisited.remove(at: indexPath.row)
-////            restaurantImages.remove(at: indexPath.row)
-////
-////
-////        }
-////
-////        //tableView.reloadData()
-////        tableView.deleteRows(at: [indexPath], with: .fade)
-////
-////
-////        print("Total item: \(restaurantNames.count)")
-////        for name in restaurantNames {
-////            print(name)
-////        }
-////
-////    }
-//
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (UIContextualAction, UIView, completionHandler) in
 
@@ -269,6 +206,42 @@ class RestaurantTableViewController: UITableViewController {
     
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+            
+        default:
+            tableView.reloadData()
+        }
+        
+        if let fetchedObjects = controller.fetchedObjects {
+            restaurants = fetchedObjects as! [RestaurantMO]
+        }
+    }
+    
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
     
 }

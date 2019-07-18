@@ -16,6 +16,8 @@ class RestaurantTableViewController: UITableViewController {
     
     var restaurants: [RestaurantMO] = []
     
+    @IBOutlet weak var emptyRestaurantView: UIView!
+    
     // MARK: -View Controller life cycle
     
     override func viewDidLoad() {
@@ -25,6 +27,13 @@ class RestaurantTableViewController: UITableViewController {
         tableView.cellLayoutMarginsFollowReadableWidth = true   //set screen ipad NORMAL tableCell
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
+        // Prepare the empty view
+        tableView.backgroundView = emptyRestaurantView
+        tableView.backgroundView?.isHidden = true
+        
+        
         
         // Custom NavigationBar
         
@@ -51,6 +60,14 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: UITableViewDataSource Protocol
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        if restaurants.count > 0 {
+            tableView.backgroundView?.isHidden = true
+            tableView.separatorStyle = .singleLine
+        } else {
+            tableView.backgroundView?.isHidden = false
+            tableView.separatorStyle = .none
+        }
+        
         return 1
     }
     

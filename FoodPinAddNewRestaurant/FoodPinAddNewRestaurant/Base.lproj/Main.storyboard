@@ -201,7 +201,6 @@
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="A great restaurant try out" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bua-8b-bhy">
                                                             <rect key="frame" x="0.0" y="25.5" width="339" height="71.5"/>
                                                             <color key="backgroundColor" red="0.93725490199999995" green="0.95294117649999999" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -233,6 +232,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="save" id="aBb-yG-MRW">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didSaveButtonWithSender:" destination="OxD-Rd-GJJ" id="MIT-q7-6yQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="900"/>

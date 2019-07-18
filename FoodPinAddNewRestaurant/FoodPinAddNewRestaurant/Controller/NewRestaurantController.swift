@@ -10,7 +10,8 @@ import UIKit
 
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-
+  @IBOutlet weak var photoImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +22,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont]
         }
         
+        tableView.separatorStyle = .none
 
     }
     
@@ -81,6 +83,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
                     let imagePicker = UIImagePickerController()
                     imagePicker.allowsEditing = false
                     imagePicker.sourceType = .camera
+                    imagePicker.delegate = self
                 
                     
                     self.present(imagePicker, animated: true, completion: nil)
@@ -92,6 +95,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
                     let imagePicker = UIImagePickerController()
                     imagePicker.allowsEditing = false
                     imagePicker.sourceType = .photoLibrary
+                    imagePicker.delegate = self
                 
                     self.present(imagePicker, animated: true, completion: nil)
                 }
@@ -110,6 +114,30 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             
             present(photoSourceResquestController, animated: true, completion: nil)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            photoImageView.image = selectedImage
+            photoImageView.contentMode = .scaleAspectFill
+            photoImageView.clipsToBounds = true
+        }
+        
+        let leadingConstraint = NSLayoutConstraint(item: photoImageView, attribute: .leading, relatedBy: .equal, toItem: photoImageView.superview, attribute: .leading, multiplier: 1, constant: 0)
+        leadingConstraint.isActive = true
+        
+        
+        let trailingContraint = NSLayoutConstraint(item: photoImageView, attribute: .trailing, relatedBy: .equal, toItem: photoImageView.superview, attribute: .trailing, multiplier: 1, constant: 0)
+        trailingContraint.isActive = true
+        
+        let topConstraint = NSLayoutConstraint(item: photoImageView, attribute: .top, relatedBy: .equal, toItem: photoImageView.superview, attribute: .top, multiplier: 1, constant: 0)
+        topConstraint.isActive = true
+        
+        let bottomConstraint = NSLayoutConstraint(item: photoImageView, attribute: .bottom, relatedBy: .equal, toItem: photoImageView.superview, attribute: .bottom, multiplier: 1, constant: 0)
+        bottomConstraint.isActive = true
+        
+        dismiss(animated: true, completion: nil)
+        
     }
     
     

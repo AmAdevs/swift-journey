@@ -21,7 +21,7 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
 //    var restaurantNameText = ""
 //    var restaurantTypeText = ""
 //    var restaurantLocationText = ""
-    var restaurant = Restaurant()
+    var restaurant: RestaurantMO!
 
     
     override func viewDidLoad() {
@@ -33,7 +33,9 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
        
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
-        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        if let restaurantImage = restaurant.image {
+            headerView.headerImageView.image = UIImage(data: restaurantImage as Data)
+        }
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
         
         tableView.dataSource = self
@@ -104,7 +106,9 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
                
                 cell.selectionStyle = .none
-                cell.configure(location: restaurant.location)
+                if let restaurantLocation = restaurant.location {
+                    cell.configure(location: restaurantLocation)
+                }
             return cell
             
             default:

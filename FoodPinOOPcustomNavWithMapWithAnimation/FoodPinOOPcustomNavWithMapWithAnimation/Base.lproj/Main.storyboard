@@ -12,18 +12,21 @@
         <array key="Rubik-Medium.ttf">
             <string>Rubik-Medium</string>
         </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--FoodPin-->
         <scene sceneID="EKV-71-zk8">
             <objects>
-                <tableViewController id="8eG-M6-NCy" customClass="RestaurantTableViewController" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8eG-M6-NCy" customClass="RestaurantTableViewController" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L1Z-z0-5dI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="82" id="G5g-zZ-Z0u" customClass="RestaurantTableViewCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="82" id="G5g-zZ-Z0u" customClass="RestaurantTableViewCell" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5g-zZ-Z0u" id="0cG-63-eov">
@@ -106,15 +109,15 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="tL3-zD-Zbf">
             <objects>
-                <viewController id="ld6-eQ-omy" customClass="restaurantDetailViewController" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ld6-eQ-omy" customClass="restaurantDetailViewController" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dQu-z5-yVd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MFI-C2-0rP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="2C4-ls-daW" userLabel="Header View" customClass="RestaurantDetailHeaderView" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="2C4-ls-daW" userLabel="Header View" customClass="RestaurantDetailHeaderView" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -175,8 +178,39 @@
                                         <outlet property="typeLabel" destination="QU1-X6-3xF" id="uSN-7T-aDd"/>
                                     </connections>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="7ei-bN-1pa">
+                                    <rect key="frame" x="0.0" y="728" width="375" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hX-Dw-VaL" userLabel="Rate it">
+                                            <rect key="frame" x="15" y="22" width="345" height="47"/>
+                                            <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="47" id="qpu-Da-bAI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Rate it">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="NNC-KY-LuX" kind="presentation" identifier="showReview" modalTransitionStyle="crossDissolve" id="vsb-G7-J5g"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="1hX-Dw-VaL" firstAttribute="leading" secondItem="7ei-bN-1pa" secondAttribute="leading" constant="15" id="DmF-qH-U5f"/>
+                                        <constraint firstAttribute="trailing" secondItem="1hX-Dw-VaL" secondAttribute="trailing" constant="15" id="VIo-1q-1Gm"/>
+                                        <constraint firstAttribute="bottom" secondItem="1hX-Dw-VaL" secondAttribute="bottom" constant="21" id="ayg-LK-enw"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="MvU-Ra-1oe" userLabel="RestaurantDetailIconText" customClass="RestaurantDetailIconTextCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="MvU-Ra-1oe" userLabel="RestaurantDetailIconText" customClass="RestaurantDetailIconTextCell" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="378" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MvU-Ra-1oe" id="xaC-hP-fpt">
@@ -214,7 +248,7 @@
                                             <outlet property="shortTextLabel" destination="Xip-pP-sF9" id="n3O-q9-gCT"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="5Cd-aW-qMn" userLabel="RestaurantDetailText" customClass="RestaurantDetailTextCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="5Cd-aW-qMn" userLabel="RestaurantDetailText" customClass="RestaurantDetailTextCell" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="422" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Cd-aW-qMn" id="1Xp-qy-U8v">
@@ -239,7 +273,7 @@
                                             <outlet property="descriptionLabel" destination="ecg-1l-Im9" id="QQF-BN-0dz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailSeparatorCell" id="nDR-eY-PUl" userLabel="RestaurantDetailSeparator" customClass="RestaurantDetailSeparatorCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailSeparatorCell" id="nDR-eY-PUl" userLabel="RestaurantDetailSeparator" customClass="RestaurantDetailSeparatorCell" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="466" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nDR-eY-PUl" id="eFs-A3-FjA">
@@ -276,7 +310,7 @@
                                             <outlet property="titleLabel" destination="8Ry-xy-mQd" id="v66-aG-DVg"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="218" id="S0b-Xw-gLQ" userLabel="RestaurantDetailMapView" customClass="RestaurantDetailMapCell" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="218" id="S0b-Xw-gLQ" userLabel="RestaurantDetailMapView" customClass="RestaurantDetailMapCell" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="510" width="375" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S0b-Xw-gLQ" id="HV6-0U-LNY">
@@ -314,7 +348,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G45-v4-Sjo"/>
                     </view>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="headerView" destination="2C4-ls-daW" id="iiS-fM-mda"/>
                         <outlet property="tableView" destination="MFI-C2-0rP" id="Ujr-eN-n5p"/>
@@ -327,7 +361,7 @@
         <!--Map View Controller-->
         <scene sceneID="58g-Cp-19V">
             <objects>
-                <viewController id="VjM-BD-yYU" customClass="MapViewController" customModule="FoodPinOOPcustomNavWithMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VjM-BD-yYU" customClass="MapViewController" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZE7-vC-gip">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,6 +387,92 @@
             </objects>
             <point key="canvasLocation" x="2857" y="289"/>
         </scene>
+        <!--Review View Controller-->
+        <scene sceneID="CNQ-EM-aum">
+            <objects>
+                <viewController id="NNC-KY-LuX" customClass="ReviewViewController" customModule="FoodPinOOPcustomNavWithMapWithAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2hQ-6M-fPl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z2b-Hh-T8D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQI-Xz-AHz">
+                                <rect key="frame" x="343" y="20" width="16" height="22"/>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <segue destination="hWO-ND-aqe" kind="unwind" unwindAction="closeWithSegue:" id="sDE-GX-yza"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="esV-2o-bHn">
+                                <rect key="frame" x="105.5" y="166" width="164" height="335"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUX-Oa-xjx">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="59"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Love" image="love">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGU-gy-1Y8">
+                                        <rect key="frame" x="0.0" y="69" width="121" height="59"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Cool" image="cool">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cB-J6-iAL">
+                                        <rect key="frame" x="0.0" y="138" width="164" height="59"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Happy" image="happy">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08z-Ft-ww9">
+                                        <rect key="frame" x="0.0" y="207" width="105" height="59"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Sad" image="sad">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc9-Zq-jYE">
+                                        <rect key="frame" x="0.0" y="276" width="147" height="59"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="50"/>
+                                        <state key="normal" title="Angry" image="angry">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z2b-Hh-T8D" firstAttribute="leading" secondItem="2Wg-kn-0J5" secondAttribute="leading" id="4zg-Xf-FaQ"/>
+                            <constraint firstItem="Z2b-Hh-T8D" firstAttribute="trailing" secondItem="2Wg-kn-0J5" secondAttribute="trailing" id="FWp-ed-7B1"/>
+                            <constraint firstItem="Z2b-Hh-T8D" firstAttribute="bottom" secondItem="2hQ-6M-fPl" secondAttribute="bottom" id="PBt-i0-QR1"/>
+                            <constraint firstItem="2Wg-kn-0J5" firstAttribute="trailing" secondItem="eQI-Xz-AHz" secondAttribute="trailing" constant="16" id="Y5T-Vk-bXY"/>
+                            <constraint firstItem="eQI-Xz-AHz" firstAttribute="top" secondItem="2Wg-kn-0J5" secondAttribute="top" id="a9U-Sc-4q1"/>
+                            <constraint firstItem="esV-2o-bHn" firstAttribute="centerX" secondItem="2hQ-6M-fPl" secondAttribute="centerX" id="dWL-7N-OfA"/>
+                            <constraint firstItem="Z2b-Hh-T8D" firstAttribute="top" secondItem="2hQ-6M-fPl" secondAttribute="top" id="r4e-EW-tS9"/>
+                            <constraint firstItem="esV-2o-bHn" firstAttribute="centerY" secondItem="2hQ-6M-fPl" secondAttribute="centerY" id="xYv-FG-kcu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Wg-kn-0J5"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Z2b-Hh-T8D" id="3yh-ts-F51"/>
+                        <outletCollection property="rateButtons" destination="nUX-Oa-xjx" collectionClass="NSMutableArray" id="vWy-n8-1Pd"/>
+                        <outletCollection property="rateButtons" destination="LGU-gy-1Y8" collectionClass="NSMutableArray" id="Swq-FL-Tza"/>
+                        <outletCollection property="rateButtons" destination="8cB-J6-iAL" collectionClass="NSMutableArray" id="UmB-Uq-drP"/>
+                        <outletCollection property="rateButtons" destination="08z-Ft-ww9" collectionClass="NSMutableArray" id="sIS-DY-p5x"/>
+                        <outletCollection property="rateButtons" destination="Rc9-Zq-jYE" collectionClass="NSMutableArray" id="kzJ-aV-Bug"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNX-zO-Kzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hWO-ND-aqe" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2856.8000000000002" y="984.55772113943033"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mIg-qk-A9H">
             <objects>
@@ -373,6 +493,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="angry" width="78" height="103"/>
+        <image name="cool" width="78" height="83"/>
+        <image name="cross" width="33" height="32"/>
+        <image name="happy" width="78" height="86"/>
         <image name="heart-tick" width="22" height="21"/>
+        <image name="love" width="78" height="82"/>
+        <image name="sad" width="78" height="87"/>
     </resources>
 </document>

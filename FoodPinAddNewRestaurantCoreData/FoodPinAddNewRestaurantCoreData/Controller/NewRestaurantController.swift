@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
   @IBOutlet weak var photoImageView: UIImageView!
+    
+    var restaurant: RestaurantMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +59,11 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         }
     }
     
-    @IBOutlet var descriptionTextField: UITextView! {
+    @IBOutlet var descriptionTextView: UITextView! {
         didSet {
-            descriptionTextField.tag = 5
-            descriptionTextField.layer.cornerRadius = 5
-            descriptionTextField.layer.masksToBounds = true
+            descriptionTextView.tag = 5
+            descriptionTextView.layer.cornerRadius = 5
+            descriptionTextView.layer.masksToBounds = true
         }
     }
     
@@ -141,7 +144,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     }
     
     @IBAction func didSaveButton(sender: AnyObject) {
-        if nameTextField.text == "" || typeTextField.text == "" || phoneTextField.text == "" || addressTextField.text == "" || descriptionTextField.text == "" {
+        if nameTextField.text == "" || typeTextField.text == "" || phoneTextField.text == "" || addressTextField.text == "" || descriptionTextView.text == "" {
             
             let saveAction = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank.Please note that all fields are required.", preferredStyle: .alert)
             
@@ -154,11 +157,31 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             return 
         }
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
+
+            restaurant.name = nameTextField.text
+            restaurant.type = typeTextField.text
+            restaurant.location = addressTextField.text
+            restaurant.phone = phoneTextField.text
+            restaurant.summary = descriptionTextView.text
+            restaurant.isVisited = false
+            
+            if let restaurantImage = photoImageView.image {
+                restaurant.image = restaurantImage.pngData()
+            }
+            
+            print("Saving data to context...")
+            
+            appDelegate.saveContext()
+        }
+        
+        
         print("Name: \(nameTextField.text ?? "")")
         print("Type: \(typeTextField.text ?? "")")
         print("Phone: \(phoneTextField.text ?? "")")
         print("Address: \(addressTextField.text ?? "")")
-        print("Description: \(descriptionTextField.text ?? "")")
+        print("Description: \(descriptionTextView.text ?? "")")
         
         dismiss(animated: true, completion: nil)
         

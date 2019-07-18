@@ -240,7 +240,7 @@
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="addressTextField" destination="cwq-kJ-oeB" id="amZ-lE-LM2"/>
-                        <outlet property="descriptionTextField" destination="Bua-8b-bhy" id="lr8-nI-LAU"/>
+                        <outlet property="descriptionTextView" destination="Bua-8b-bhy" id="lr8-nI-LAU"/>
                         <outlet property="nameTextField" destination="YIv-fk-dAw" id="Ky9-kS-jRm"/>
                         <outlet property="phoneTextField" destination="Cpd-Wt-Ffe" id="kwn-5O-qvc"/>
                         <outlet property="photoImageView" destination="dOe-jZ-CXX" id="Grr-6v-DYb"/>

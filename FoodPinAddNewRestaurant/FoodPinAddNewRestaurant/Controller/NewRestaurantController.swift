@@ -8,11 +8,19 @@
 
 import UIKit
 
-class NewRestaurantController: UITableViewController, UITextFieldDelegate {
+class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Configure navigtion bar appearance
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.shadowImage = UIImage()
+        if let customFont = UIFont(name: "Rubik-Medium", size: 35.0) {
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60), NSAttributedString.Key.font: customFont]
+        }
+        
 
     }
     
@@ -61,6 +69,47 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            
+            let photoSourceResquestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
+            
+            let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.allowsEditing = false
+                    imagePicker.sourceType = .camera
+                
+                    
+                    self.present(imagePicker, animated: true, completion: nil)
+                }
+            })
+            
+            let photoLibraryAction = UIAlertAction(title: "Photo library", style: .default, handler: { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.allowsEditing = false
+                    imagePicker.sourceType = .photoLibrary
+                
+                    self.present(imagePicker, animated: true, completion: nil)
+                }
+            })
+            
+            photoSourceResquestController.addAction(cameraAction)
+            photoSourceResquestController.addAction(photoLibraryAction)
+            
+            // For iPad
+            if let popoverController = photoSourceResquestController.popoverPresentationController {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
+            
+            present(photoSourceResquestController, animated: true, completion: nil)
+        }
     }
     
     

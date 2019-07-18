@@ -29,14 +29,16 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         navigationItem.largeTitleDisplayMode = .never
 
-       
-       
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
         if let restaurantImage = restaurant.image {
             headerView.headerImageView.image = UIImage(data: restaurantImage as Data)
         }
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
+        
+        if let rating = restaurant.rating {
+            headerView.ratingImage.image = UIImage(named: rating)
+        }
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -138,11 +140,16 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
                 self.restaurant.rating = rating
                 self.headerView.ratingImage.image = UIImage(named: rating)
                 
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    appDelegate.saveContext()
+                }
+                
+                
                 let scaleTransform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
                 self.headerView.ratingImage.transform = scaleTransform
                 self.headerView.ratingImage.alpha = 0
                 
-                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.7, options: [], animations: {
+                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.13, initialSpringVelocity: 0.7, options: [], animations: {
                     self.headerView.ratingImage.transform = .identity
                     self.headerView.ratingImage.alpha = 1
                 }, completion: nil)

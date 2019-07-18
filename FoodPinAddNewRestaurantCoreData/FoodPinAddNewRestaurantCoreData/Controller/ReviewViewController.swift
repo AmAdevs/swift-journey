@@ -38,16 +38,15 @@ class ReviewViewController: UIViewController {
             rateButton.alpha = 0
         }
         
-        let moveTopTransform = CGAffineTransform.init(translationX: 0, y: -400)
+        let moveTopTransform = CGAffineTransform.init(translationX: 0, y: -800)
         closeButton.transform = moveTopTransform
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 2.0) {
-            
-            for i in 0...4 {
-                UIView.animate(withDuration: 0.4, delay: (1 + 0.05 ) * Double(i) , options: [], animations: {
+   
+            for i in 0...self.rateButtons.count - 1 {
+                UIView.animate(withDuration: 0.4, delay: 0.1 + 0.05  * Double(i) , options: [], animations: {
                     self.rateButtons[i].alpha = 1.0
                     self.rateButtons[i].transform = .identity
                 }, completion: nil)
@@ -57,7 +56,9 @@ class ReviewViewController: UIViewController {
                 self.closeButton.transform = .identity
             }
 
-        }
+      
+        
+        
     }
 
 

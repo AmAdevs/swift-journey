@@ -127,5 +127,13 @@ class restaurantDetailViewController: UIViewController, UITableViewDataSource, U
         dismiss(animated: true, completion: nil)
     }
  
+    @IBAction func rateRestaurant(segue: UIStoryboardSegue) {
+        if let rating = segue.identifier {
+            self.restaurant.rating = rating
+            self.headerView.ratingImage.image = UIImage(named: rating)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
 
 }

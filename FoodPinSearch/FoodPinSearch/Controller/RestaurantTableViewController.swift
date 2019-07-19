@@ -10,16 +10,18 @@ import UIKit
 import CoreData
 
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
+
     
     var cellId = "cell"
     
     var restaurants: [RestaurantMO] = []
+    var searchResults: [RestaurantMO] = []
     
     @IBOutlet weak var emptyRestaurantView: UIView!
     
     var fetchResultController: NSFetchedResultsController<RestaurantMO>!
+    var searchController: UISearchController!
     
     // MARK: -View Controller life cycle
     
@@ -30,6 +32,18 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.cellLayoutMarginsFollowReadableWidth = true   //set screen ipad NORMAL tableCell
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // Search
+        searchController = UISearchController(searchResultsController: nil)
+        //self.navigationItem.searchController = searchController
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.backgroundImage = UIImage()
+        searchController.searchBar.tintColor = UIColor(red: 231, green: 76, blue: 60)
+        
         
         
         // Prepare the empty view
@@ -95,7 +109,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
     }
     
     
@@ -103,15 +121,18 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! RestaurantTableViewCell
         
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        if let restaurantImage = restaurants[indexPath.row].image {
+        // Determine if we get the restaurant from search result or the original array
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        
+        cell.nameLabel.text = restaurant.name
+        if let restaurantImage = restaurant.image {
             cell.thumbnailImageView.image = UIImage(data: restaurantImage as Data)
         }
-        cell.locationType.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
+        cell.locationType.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
         
         //cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
-        cell.heartImageView.isHidden = restaurants[indexPath.row].isVisited ? false : true
+        cell.heartImageView.isHidden = restaurant.isVisited ? false : true
     
         
         
@@ -197,7 +218,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "restaurantShowDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! restaurantDetailViewController
-                    destinationController.restaurant = restaurants[indexPath.row]
+                    destinationController.restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
                 
             }
         }
@@ -241,6 +262,36 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+    
+    
+    // MARK: Search filtering
+    func filterContent(for searchText: String) {
+        searchResults = restaurants.filter({ (restaurant) -> Bool in
+            if let name = restaurant.name, let location = restaurant.location {
+                let isMatch = name.localizedCaseInsensitiveContains(searchText) || location.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+
+       
+            return false
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if searchController.isActive {
+            return false
+        } else {
+            return true
+        }
     }
     
 }

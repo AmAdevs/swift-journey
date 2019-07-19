@@ -14,12 +14,14 @@ class ReviewViewController: UIViewController {
     @IBOutlet var rateButtons: [UIButton]!
     @IBOutlet var closeButton: UIButton!
     
-    var restaurant = Restaurant()
+    var restaurant: RestaurantMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImageView.image = UIImage(named: restaurant.image)
+        if let restaurantImage = restaurant.image {
+            backgroundImageView.image = UIImage(data: restaurantImage as Data)
+        }
 
         // Applying the blur effect
         let blurEffect = UIBlurEffect(style: .dark)
@@ -36,26 +38,26 @@ class ReviewViewController: UIViewController {
             rateButton.alpha = 0
         }
         
-        let moveTopTransform = CGAffineTransform.init(translationX: 0, y: -400)
+        let moveTopTransform = CGAffineTransform.init(translationX: 0, y: -800)
         closeButton.transform = moveTopTransform
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-    
-            
-            for i in 0...4 {
-                UIView.animate(withDuration: 0.4, delay: (0.1 + 0.05 ) * Double(i) , options: [], animations: {
-                    self.rateButtons[i].alpha = 1.0
-                    self.rateButtons[i].transform = .identity
-                }, completion: nil)
-            }
-            
-            UIView.animate(withDuration: 0.4) {
-                self.closeButton.transform = .identity
-            }
-
+   
+        for i in 0...4 {
+            UIView.animate(withDuration: 0.4, delay: (0.1 + 0.05 ) * Double(i) , options: [], animations: {
+                self.rateButtons[i].alpha = 1.0
+                self.rateButtons[i].transform = .identity
+            }, completion: nil)
+        }
+        
+        UIView.animate(withDuration: 0.4) {
+            self.closeButton.transform = .identity
+        }
       
+        
+        
     }
 
 

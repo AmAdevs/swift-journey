@@ -37,6 +37,8 @@
 		6B5BA11822DAE7000091091A /* restaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */; };
 		6B648E1122DEF086004B02FF /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B648E1022DEF086004B02FF /* UIColor+Ext.swift */; };
 		6B648E1322DEF52D004B02FF /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B648E1222DEF52D004B02FF /* UINavigationController+Ext.swift */; };
+		6B9967CD22E2152C00715F4F /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9967CB22E2152C00715F4F /* About.storyboard */; };
+		6B9967CF22E2159200715F4F /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9967CE22E2159200715F4F /* Discover.storyboard */; };
 		6BAB94D622DF72AD007A676F /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB94D522DF72AD007A676F /* ReviewViewController.swift */; };
 		6BFAFD9B22E1AA6F0027CB9A /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFAFD9A22E1AA6F0027CB9A /* Onboarding.storyboard */; };
 		6BFAFD9D22E1BBDA0027CB9A /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAFD9C22E1BBDA0027CB9A /* WalkthroughContentViewController.swift */; };
@@ -77,6 +79,8 @@
 		6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurantDetailViewController.swift; sourceTree = "<group>"; };
 		6B648E1022DEF086004B02FF /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		6B648E1222DEF52D004B02FF /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		6B9967CC22E2152C00715F4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPinTabBar/Storyboard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
+		6B9967CE22E2159200715F4F /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		6BAB94D522DF72AD007A676F /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		6BFAFD9A22E1AA6F0027CB9A /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		6BFAFD9C22E1BBDA0027CB9A /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 		6BFAFD9922E1A6830027CB9A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				6B9967CE22E2159200715F4F /* Discover.storyboard */,
+				6B9967CB22E2152C00715F4F /* About.storyboard */,
 				6B2D3B5522D86C1E002C9CD9 /* Main.storyboard */,
 				6BFAFD9A22E1AA6F0027CB9A /* Onboarding.storyboard */,
 				6B2D3B5A22D86C20002C9CD9 /* LaunchScreen.storyboard */,
@@ -283,8 +289,10 @@
 				6B2C394122DB730E00FB8FEB /* Rubik-Light.ttf in Resources */,
 				6B2C393C22DB730E00FB8FEB /* Rubik-RegularItalic.ttf in Resources */,
 				6B2C394322DB730E00FB8FEB /* Rubik-Regular.ttf in Resources */,
+				6B9967CF22E2159200715F4F /* Discover.storyboard in Resources */,
 				6B2D3B5922D86C20002C9CD9 /* Assets.xcassets in Resources */,
 				6B2C394222DB730E00FB8FEB /* Rubik-MediumItalic.ttf in Resources */,
+				6B9967CD22E2152C00715F4F /* About.storyboard in Resources */,
 				6BFAFD9B22E1AA6F0027CB9A /* Onboarding.storyboard in Resources */,
 				6B2D3B5722D86C1E002C9CD9 /* Main.storyboard in Resources */,
 				6B2C393F22DB730E00FB8FEB /* Rubik-Medium.ttf in Resources */,
@@ -338,6 +346,14 @@
 				6B2D3B5B22D86C20002C9CD9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6B9967CB22E2152C00715F4F /* About.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B9967CC22E2152C00715F4F /* Base */,
+			);
+			name = About.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

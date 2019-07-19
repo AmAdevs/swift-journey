@@ -16,10 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Customize the back button
         let backButtonImage = UIImage(named: "back")
         UINavigationBar.appearance().backIndicatorImage = backButtonImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backButtonImage
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        
+        // Customize the tab bar
+        UITabBar.appearance().tintColor = UIColor(red: 231, green: 76, blue: 60)
+        UITabBar.appearance().backgroundColor = .black
+        
         return true
     }
 

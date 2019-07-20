@@ -33,11 +33,13 @@
 		6B335D3B22E05A9200A43846 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B335D3A22E05A9200A43846 /* RoundedTextField.swift */; };
 		6B335D3D22E05F7300A43846 /* NewRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B335D3C22E05F7300A43846 /* NewRestaurantController.swift */; };
 		6B3423F422E2BF160088F38E /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3423F322E2BF160088F38E /* AboutTableViewController.swift */; };
+		6B3423F622E2D02F0088F38E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3423F522E2D02F0088F38E /* WebViewController.swift */; };
 		6B37DBF122E0AAD90050ABF4 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B37DBEF22E0AAD90050ABF4 /* FoodPin.xcdatamodeld */; };
 		6B3CF28B22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CF28A22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift */; };
 		6B5BA11822DAE7000091091A /* restaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */; };
 		6B648E1122DEF086004B02FF /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B648E1022DEF086004B02FF /* UIColor+Ext.swift */; };
 		6B648E1322DEF52D004B02FF /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B648E1222DEF52D004B02FF /* UINavigationController+Ext.swift */; };
+		6B6CEA7522E2EFB00072B68F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6CEA7422E2EFB00072B68F /* WebKit.framework */; };
 		6B9967CD22E2152C00715F4F /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9967CB22E2152C00715F4F /* About.storyboard */; };
 		6B9967CF22E2159200715F4F /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9967CE22E2159200715F4F /* Discover.storyboard */; };
 		6BAB94D622DF72AD007A676F /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB94D522DF72AD007A676F /* ReviewViewController.swift */; };
@@ -76,11 +78,13 @@
 		6B335D3A22E05A9200A43846 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		6B335D3C22E05F7300A43846 /* NewRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantController.swift; sourceTree = "<group>"; };
 		6B3423F322E2BF160088F38E /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		6B3423F522E2D02F0088F38E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		6B37DBF022E0AAD90050ABF4 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		6B3CF28A22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurantDetailViewController.swift; sourceTree = "<group>"; };
 		6B648E1022DEF086004B02FF /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		6B648E1222DEF52D004B02FF /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		6B6CEA7422E2EFB00072B68F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6B9967CC22E2152C00715F4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPinTabBar/Storyboard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
 		6B9967CE22E2159200715F4F /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		6BAB94D522DF72AD007A676F /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6CEA7522E2EFB00072B68F /* WebKit.framework in Frameworks */,
 				6B219F4A22DF02FC00920714 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +110,7 @@
 		6B219F4822DF02FC00920714 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B6CEA7422E2EFB00072B68F /* WebKit.framework */,
 				6B219F4922DF02FC00920714 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -144,6 +150,7 @@
 				6BFAFD9E22E1BF5E0027CB9A /* WalkthroughPageViewController.swift */,
 				6BFAFDA022E1C6520027CB9A /* WalkthroughViewController.swift */,
 				6B3423F322E2BF160088F38E /* AboutTableViewController.swift */,
+				6B3423F522E2D02F0088F38E /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B2C394722DB7EDB00FB8FEB /* RestaurantDetailHeaderView.swift in Sources */,
+				6B3423F622E2D02F0088F38E /* WebViewController.swift in Sources */,
 				6B2C392D22DB547400FB8FEB /* Restaurant.swift in Sources */,
 				6BAB94D622DF72AD007A676F /* ReviewViewController.swift in Sources */,
 				6B219F4E22DF10D200920714 /* RestaurantDetailMapCell.swift in Sources */,

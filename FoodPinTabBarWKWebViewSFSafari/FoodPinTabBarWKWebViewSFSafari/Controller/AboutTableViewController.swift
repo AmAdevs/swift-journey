@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class AboutTableViewController: UITableViewController {
 
     var sectionTitles = ["Feedback", "Follow Us"]
@@ -24,7 +25,6 @@ class AboutTableViewController: UITableViewController {
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
         navigationController?.navigationBar.prefersLargeTitles = true
-        
         // Configure navigation bar appearance
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -70,12 +70,24 @@ class AboutTableViewController: UITableViewController {
                 if let url = URL(string: link) {
                     UIApplication.shared.open(url)
                 }
+            } else if indexPath.row == 1 {
+                performSegue(withIdentifier: "showWebView", sender: self)
             }
+       
         default:
             break
             
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWebView" {
+            if let destinationController = segue.destination as? WebViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                    destinationController.targetURL = sectionContent[indexPath.section][indexPath.row].link
+            }
+        }
     }
     
 

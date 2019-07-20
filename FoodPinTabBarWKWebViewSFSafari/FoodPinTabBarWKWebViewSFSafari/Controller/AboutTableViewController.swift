@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 
 class AboutTableViewController: UITableViewController {
@@ -17,7 +18,7 @@ class AboutTableViewController: UITableViewController {
                         
                           [(image: "twitter", text: "Twitter", link: "https://www.twitter.com/appcodamobile"),
                            (image: "facebook", text: "Facebook", link: "https://www.facebook.com/appcodamobile"),
-                           (image: "instagram", text: "Instagram", link: "https://www.instragram.com/appcodadotcom")]]
+                           (image: "instagram", text: "Instagram", link: "https://www.instagram.com/appcodadotcom")]]
     
     
     override func viewDidLoad() {
@@ -73,7 +74,13 @@ class AboutTableViewController: UITableViewController {
             } else if indexPath.row == 1 {
                 performSegue(withIdentifier: "showWebView", sender: self)
             }
-       
+            // Follow us section
+        case 1:
+            if let url = URL(string: link) {
+                let safariController = SFSafariViewController(url: url)
+                present(safariController, animated: true, completion: nil)
+            }
+            
         default:
             break
             

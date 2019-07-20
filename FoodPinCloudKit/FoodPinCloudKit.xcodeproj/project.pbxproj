@@ -35,6 +35,7 @@
 		6B3423F422E2BF160088F38E /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3423F322E2BF160088F38E /* AboutTableViewController.swift */; };
 		6B3423F622E2D02F0088F38E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3423F522E2D02F0088F38E /* WebViewController.swift */; };
 		6B37DBF122E0AAD90050ABF4 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B37DBEF22E0AAD90050ABF4 /* FoodPin.xcdatamodeld */; };
+		6B3CE2E922E3596500DB5766 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CE2E822E3596500DB5766 /* DiscoverTableViewController.swift */; };
 		6B3CF28B22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CF28A22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift */; };
 		6B5BA11822DAE7000091091A /* restaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */; };
 		6B648E1122DEF086004B02FF /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B648E1022DEF086004B02FF /* UIColor+Ext.swift */; };
@@ -81,6 +82,7 @@
 		6B3423F322E2BF160088F38E /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		6B3423F522E2D02F0088F38E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		6B37DBF022E0AAD90050ABF4 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
+		6B3CE2E822E3596500DB5766 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		6B3CF28A22DCC73200946AA1 /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		6B5BA11722DAE7000091091A /* restaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurantDetailViewController.swift; sourceTree = "<group>"; };
 		6B648E1022DEF086004B02FF /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				6BFAFDA022E1C6520027CB9A /* WalkthroughViewController.swift */,
 				6B3423F322E2BF160088F38E /* AboutTableViewController.swift */,
 				6B3423F522E2D02F0088F38E /* WebViewController.swift */,
+				6B3CE2E822E3596500DB5766 /* DiscoverTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B3CE2E922E3596500DB5766 /* DiscoverTableViewController.swift in Sources */,
 				6B2C394722DB7EDB00FB8FEB /* RestaurantDetailHeaderView.swift in Sources */,
 				6B3423F622E2D02F0088F38E /* WebViewController.swift in Sources */,
 				6B2C392D22DB547400FB8FEB /* Restaurant.swift in Sources */,

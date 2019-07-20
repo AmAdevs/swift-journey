@@ -41,24 +41,30 @@ class DiscoverTableViewController: UITableViewController {
         let publicDatabase = cloudContrainer.publicCloudDatabase
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Restaurant", predicate: predicate)
-        publicDatabase.perform(query, inZoneWith: nil, completionHandler: {
-            (results, error) -> Void in
-            
+      
+        // Create the query operation with the query
+        let queryOperation = CKQueryOperation(query: query)
+        queryOperation.desiredKeys = ["Name", "image"]
+        queryOperation.queuePriority = .veryHigh
+        queryOperation.resultsLimit = 50
+        queryOperation.recordFetchedBlock = { (record) -> Void in
+            self.restaurants.append(record)
+        }
+        
+        queryOperation.queryCompletionBlock = { [unowned self] (cursor, error) -> Void in
             if let error = error {
-                print(error)
+                print("Feiled to get data from icloud - \(error.localizedDescription)")
                 return
             }
             
-            if let results = results {
-                print("Completed the download of Restaurant data")
-                self.restaurants = results
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            
-                
+            print("Successfullly retrieve the data from iCloud")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-        })
+        }
+        
+        // Execute the query
+        publicDatabase.add(queryOperation)
     }
 
     // MARK: - Table view data source

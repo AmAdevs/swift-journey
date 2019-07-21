@@ -15,6 +15,8 @@ class DiscoverTableViewController: UITableViewController {
     var restaurants: [CKRecord] = []
     var spinner = UIActivityIndicatorView()
     
+    private var imageCache = NSCache<CKRecord.ID, NSURL>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -98,6 +100,16 @@ class DiscoverTableViewController: UITableViewController {
         // Set the default image
         cell.imageView?.image = UIImage(named: "photo")
         
+        // Check if the image is stored in cache
+        if let imageFileURL = imageCache.object(forKey: restaurant.recordID) {
+            // Fetch image from cache
+            print("Get image from cache")
+            if let imageData = try? Data.init(contentsOf: imageFileURL as URL) {
+                cell.imageView?.image = UIImage(data: imageData)
+            }
+        }
+        
+        
         
         // Fetch Image from Cloud in background
         let publicDatabase = CKContainer.default().publicCloudDatabase
@@ -123,6 +135,8 @@ class DiscoverTableViewController: UITableViewController {
                         cell.setNeedsLayout()
                     }
                     
+                    // Add the image URL to cache
+                    self.imageCache.setObject(imageAsset.fileURL! as NSURL, forKey: restaurant.recordID)
                 }
                 
             }

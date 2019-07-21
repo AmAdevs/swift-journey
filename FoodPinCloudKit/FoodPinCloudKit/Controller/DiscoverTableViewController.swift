@@ -89,6 +89,7 @@ class DiscoverTableViewController: UITableViewController {
             
             print("Successfullly retrieve the data from iCloud")
             DispatchQueue.main.async {
+                self.spinner.stopAnimating()
                 self.tableView.reloadData()
                 if let refreshControl = self.refreshControl {
                     if refreshControl.isRefreshing {

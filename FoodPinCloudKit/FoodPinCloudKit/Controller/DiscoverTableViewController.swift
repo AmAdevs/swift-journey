@@ -32,7 +32,7 @@ class DiscoverTableViewController: UITableViewController {
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: customFont, NSAttributedString.Key.foregroundColor: UIColor(red: 231, green: 76, blue: 60)]
         }
         
-        fecthRecordsFromCloud()
+     
         
         spinner.style = .gray
         spinner.hidesWhenStopped = true
@@ -44,10 +44,27 @@ class DiscoverTableViewController: UITableViewController {
         
         // Activate the spinner
         spinner.startAnimating()
+        
+        
+        
+        // Pull To Refresh Control
+        refreshControl =  UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.white
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(fecthRecordsFromCloud), for: UIControl.Event.valueChanged)
+        
+        
+        
+        
+        fecthRecordsFromCloud()
 
     }
     
-    func fecthRecordsFromCloud() {
+    @objc func fecthRecordsFromCloud() {
+        
+        // Remove existing records before refreshing
+        restaurants.removeAll()
+        tableView.reloadData()
         
         // Fetch data using Convenience API
         let cloudContrainer = CKContainer.default()
@@ -73,6 +90,11 @@ class DiscoverTableViewController: UITableViewController {
             print("Successfullly retrieve the data from iCloud")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                if let refreshControl = self.refreshControl {
+                    if refreshControl.isRefreshing {
+                        refreshControl.endRefreshing()
+                    }
+                }
             }
         }
         

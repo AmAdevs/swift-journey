@@ -12,13 +12,13 @@ import SafariServices
 
 class AboutTableViewController: UITableViewController {
 
-    var sectionTitles = ["Feedback", "Follow Us"]
-    var sectionContent = [[(image: "store", text: "Rate us on App Store", link: "https://www.apple.com/itunes/charts/paid-apps/"),
-                           (image: "chat", text: "Tell us your feedback", link: "https://www.appcoda.com/contact")],
+    var sectionTitles = [NSLocalizedString("Feedback", comment: "Feedback"), NSLocalizedString("Follow Us", comment: "Follow Us")]
+    var sectionContent = [[(image: "store", text: NSLocalizedString("Rate us on App Store", comment: "Rate us on App Store"), link: "https://www.apple.com/itunes/charts/paid-apps/"),
+                           (image: "chat", text: NSLocalizedString("Tell us your feedback", comment: "Tell us your feedback"), link: "https://www.appcoda.com/contact")],
                         
-                          [(image: "twitter", text: "Twitter", link: "https://www.twitter.com/appcodamobile"),
-                           (image: "facebook", text: "Facebook", link: "https://www.facebook.com/appcodamobile"),
-                           (image: "instagram", text: "Instagram", link: "https://www.instagram.com/appcodadotcom")]]
+                          [(image: "twitter", text: NSLocalizedString("Twitter", comment: "Twitter"), link: "https://www.twitter.com/appcodamobile"),
+                           (image: "facebook", text: NSLocalizedString("Facebook", comment: "Facebook"), link: "https://www.facebook.com/appcodamobile"),
+                           (image: "instagram", text: NSLocalizedString("Instagram", comment: "Instagram"), link: "https://www.instagram.com/appcodadotcom")]]
     
     
     override func viewDidLoad() {

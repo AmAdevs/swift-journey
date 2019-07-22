@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CloudKit
 
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -143,7 +144,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         
     }
     
-    @IBAction func didSaveButton(sender: AnyObject) {
+    @IBAction func didSaveButton(sender: UIButton) {
         if nameTextField.text == "" || typeTextField.text == "" || phoneTextField.text == "" || addressTextField.text == "" || descriptionTextView.text == "" {
             
             let saveAction = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank.Please note that all fields are required.", preferredStyle: .alert)
@@ -183,10 +184,62 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         print("Address: \(addressTextField.text ?? "")")
         print("Description: \(descriptionTextView.text ?? "")")
         
+        // Save to Cloud
+        saveRecordToCloud(restaurant: restaurant)
+     
         dismiss(animated: true, completion: nil)
-        
+    
         
     }
+    
+    
+    func saveRecordToCloud(restaurant: RestaurantMO!) -> Void {
+        
+        // Prepare the record to save
+        let record = CKRecord(recordType: "Restaurant")
+        record.setValue(restaurant.summary, forKey: "description")
+        record.setValue(restaurant.location, forKey: "location")
+        record.setValue(restaurant.name, forKey: "Name")
+        record.setValue(restaurant.phone, forKey: "phone")
+        record.setValue(restaurant.type, forKey: "type")
+       
+    
+    
+        
+        let imageData = restaurant.image! as Data
+        
+        // Resize the image
+        let originalImage = UIImage(data: imageData)!
+        let scalingFactor = (originalImage.size.width > 1024) ? (1024 / originalImage.size.width) : 1.0
+        print("scale image \(originalImage.size.width)")
+        print("scale down \(scalingFactor)")
+        let scaledImage = UIImage(data: imageData, scale: scalingFactor)!
+        
+        // Write the image to local file for temporary use
+        let imageFilePath = NSTemporaryDirectory() + restaurant.name!
+        let imageFileURL = URL(fileURLWithPath: imageFilePath)
+        
+        try? scaledImage.jpegData(compressionQuality: 0.8)?.write(to: imageFileURL)
+        
+        // Create image asset for upload
+        let imageAsset = CKAsset(fileURL: imageFileURL)
+        record.setValue(imageAsset, forKey: "image")
+        
+        // Get the Public iCloud Database
+        let publicDatabase = CKContainer.default().publicCloudDatabase
+        
+        // Save the record to iCloud
+        publicDatabase.save(record, completionHandler: { (record, error) -> Void  in
+            // Remove temp file
+            try? FileManager.default.removeItem(at: imageFileURL)
+            guard record != nil else { return }
+            print("save")
+            
+        })
+    }
+    
+    
+    
     
    
 }

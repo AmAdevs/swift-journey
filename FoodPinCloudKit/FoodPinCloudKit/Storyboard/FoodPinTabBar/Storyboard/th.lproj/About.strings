@@ -1,0 +1,9 @@
+/* Class = "UILabel"; text = "Title"; ObjectID = "0iY-FU-qAs"; */
+"0iY-FU-qAs.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "Gug-FS-nX6"; */
+"Gug-FS-nX6.title" = "เกี่ยวกับ FoodPin";
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "les-1m-fqL"; */
+"les-1m-fqL.title" = "เกี่ยวกับ";
+

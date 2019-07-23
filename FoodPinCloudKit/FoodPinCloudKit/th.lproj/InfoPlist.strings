@@ -1,0 +1,6 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "ขออนุญาติเข้าถึงกล้องของคุณ เพื่อเข้าใช้งานกล้องสำหรับ FoodPin Application";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "ขออนุญาติเข้าถึงอัลบั้มของคุณ";
+

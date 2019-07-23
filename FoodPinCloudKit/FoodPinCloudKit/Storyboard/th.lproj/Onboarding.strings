@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Subheading"; ObjectID = "Mzx-cp-Hcy"; */
+"Mzx-cp-Hcy.text" = "Subheading";
+
+/* Class = "UIButton"; normalTitle = "NEXT"; ObjectID = "Pqu-dR-AHV"; */
+"Pqu-dR-AHV.normalTitle" = "ต่อไป";
+
+/* Class = "UILabel"; text = "HEADING"; ObjectID = "cEw-J8-0F4"; */
+"cEw-J8-0F4.text" = "HEADING";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "zjY-81-3An"; */
+"zjY-81-3An.normalTitle" = "ข้าม";

@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JX4-LR-XLj"; */
+"JX4-LR-XLj.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Discover"; ObjectID = "L9E-RU-fRt"; */
+"L9E-RU-fRt.title" = "ค้นหาสิ่งใหม่";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Lvd-YT-JAi"; */
+"Lvd-YT-JAi.text" = "Label";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ZZo-4u-1dN"; */
+"ZZo-4u-1dN.text" = "ชื่อ";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "rrD-An-Vwn"; */
+"rrD-An-Vwn.text" = "Type";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sPq-CA-oQF"; */
+"sPq-CA-oQF.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Discover"; ObjectID = "saU-0r-hA8"; */
+"saU-0r-hA8.title" = "ค้นหาสิ่งใหม่";

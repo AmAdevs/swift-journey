@@ -44,9 +44,11 @@
 		6B6CEA7822E319700072B68F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6CEA7722E319700072B68F /* CloudKit.framework */; };
 		6B7B834C22E5B8620075577E /* RestaurantDiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7B834B22E5B8620075577E /* RestaurantDiscoverTableViewCell.swift */; };
 		6B9967CD22E2152C00715F4F /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9967CB22E2152C00715F4F /* About.storyboard */; };
-		6B9967CF22E2159200715F4F /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9967CE22E2159200715F4F /* Discover.storyboard */; };
 		6BAB94D622DF72AD007A676F /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB94D522DF72AD007A676F /* ReviewViewController.swift */; };
-		6BFAFD9B22E1AA6F0027CB9A /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFAFD9A22E1AA6F0027CB9A /* Onboarding.storyboard */; };
+		6BB1474022E708A7003FBB79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BB1473E22E708A7003FBB79 /* InfoPlist.strings */; };
+		6BB1474322E708A7003FBB79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BB1474122E708A7003FBB79 /* Localizable.strings */; };
+		6BB1474422E70B0D003FBB79 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB1474622E70B0D003FBB79 /* Discover.storyboard */; };
+		6BB1474922E70C42003FBB79 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB1474B22E70C42003FBB79 /* Onboarding.storyboard */; };
 		6BFAFD9D22E1BBDA0027CB9A /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAFD9C22E1BBDA0027CB9A /* WalkthroughContentViewController.swift */; };
 		6BFAFD9F22E1BF5E0027CB9A /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAFD9E22E1BF5E0027CB9A /* WalkthroughPageViewController.swift */; };
 		6BFAFDA122E1C6520027CB9A /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFAFDA022E1C6520027CB9A /* WalkthroughViewController.swift */; };
@@ -93,9 +95,15 @@
 		6B6CEA7722E319700072B68F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		6B7B834B22E5B8620075577E /* RestaurantDiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		6B9967CC22E2152C00715F4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPinTabBar/Storyboard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
-		6B9967CE22E2159200715F4F /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		6BAB94D522DF72AD007A676F /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
-		6BFAFD9A22E1AA6F0027CB9A /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		6BB1473B22E7081F003FBB79 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = FoodPinTabBar/Storyboard/th.lproj/About.strings; sourceTree = "<group>"; };
+		6BB1473C22E70820003FBB79 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
+		6BB1473D22E70820003FBB79 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6BB1473F22E708A7003FBB79 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6BB1474222E708A7003FBB79 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6BB1474522E70B0D003FBB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
+		6BB1474822E70B11003FBB79 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Discover.strings; sourceTree = "<group>"; };
+		6BB1474A22E70C42003FBB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
 		6BFAFD9C22E1BBDA0027CB9A /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		6BFAFD9E22E1BF5E0027CB9A /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		6BFAFDA022E1C6520027CB9A /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +221,8 @@
 				6BFAFD9922E1A6830027CB9A /* Storyboard */,
 				6B2D3B5822D86C20002C9CD9 /* Assets.xcassets */,
 				6B2D3B5D22D86C20002C9CD9 /* Info.plist */,
+				6BB1474122E708A7003FBB79 /* Localizable.strings */,
+				6BB1473E22E708A7003FBB79 /* InfoPlist.strings */,
 				6B37DBEF22E0AAD90050ABF4 /* FoodPin.xcdatamodeld */,
 			);
 			path = FoodPinCloudKit;
@@ -230,10 +240,10 @@
 		6BFAFD9922E1A6830027CB9A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				6B9967CE22E2159200715F4F /* Discover.storyboard */,
+				6BB1474622E70B0D003FBB79 /* Discover.storyboard */,
 				6B9967CB22E2152C00715F4F /* About.storyboard */,
 				6B2D3B5522D86C1E002C9CD9 /* Main.storyboard */,
-				6BFAFD9A22E1AA6F0027CB9A /* Onboarding.storyboard */,
+				6BB1474B22E70C42003FBB79 /* Onboarding.storyboard */,
 				6B2D3B5A22D86C20002C9CD9 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -292,6 +302,7 @@
 			knownRegions = (
 				en,
 				Base,
+				th,
 			);
 			mainGroup = 6B2D3B4522D86C1E002C9CD9;
 			productRefGroup = 6B2D3B4F22D86C1E002C9CD9 /* Products */;
@@ -313,15 +324,17 @@
 				6B2C394022DB730E00FB8FEB /* Rubik-LightItalic.ttf in Resources */,
 				6B2C394422DB730E00FB8FEB /* Rubik-BlackItalic.ttf in Resources */,
 				6B2C393E22DB730E00FB8FEB /* Rubik-Bold.ttf in Resources */,
+				6BB1474022E708A7003FBB79 /* InfoPlist.strings in Resources */,
 				6B2D3B5C22D86C20002C9CD9 /* LaunchScreen.storyboard in Resources */,
 				6B2C394122DB730E00FB8FEB /* Rubik-Light.ttf in Resources */,
 				6B2C393C22DB730E00FB8FEB /* Rubik-RegularItalic.ttf in Resources */,
 				6B2C394322DB730E00FB8FEB /* Rubik-Regular.ttf in Resources */,
-				6B9967CF22E2159200715F4F /* Discover.storyboard in Resources */,
+				6BB1474422E70B0D003FBB79 /* Discover.storyboard in Resources */,
 				6B2D3B5922D86C20002C9CD9 /* Assets.xcassets in Resources */,
 				6B2C394222DB730E00FB8FEB /* Rubik-MediumItalic.ttf in Resources */,
+				6BB1474322E708A7003FBB79 /* Localizable.strings in Resources */,
 				6B9967CD22E2152C00715F4F /* About.storyboard in Resources */,
-				6BFAFD9B22E1AA6F0027CB9A /* Onboarding.storyboard in Resources */,
+				6BB1474922E70C42003FBB79 /* Onboarding.storyboard in Resources */,
 				6B2D3B5722D86C1E002C9CD9 /* Main.storyboard in Resources */,
 				6B2C393F22DB730E00FB8FEB /* Rubik-Medium.ttf in Resources */,
 			);
@@ -368,6 +381,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B2D3B5622D86C1E002C9CD9 /* Base */,
+				6BB1473C22E70820003FBB79 /* th */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -376,6 +390,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B2D3B5B22D86C20002C9CD9 /* Base */,
+				6BB1473D22E70820003FBB79 /* th */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -384,8 +399,42 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B9967CC22E2152C00715F4F /* Base */,
+				6BB1473B22E7081F003FBB79 /* th */,
 			);
 			name = About.storyboard;
+			sourceTree = "<group>";
+		};
+		6BB1473E22E708A7003FBB79 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BB1473F22E708A7003FBB79 /* th */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6BB1474122E708A7003FBB79 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BB1474222E708A7003FBB79 /* th */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		6BB1474622E70B0D003FBB79 /* Discover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BB1474522E70B0D003FBB79 /* Base */,
+				6BB1474822E70B11003FBB79 /* th */,
+			);
+			name = Discover.storyboard;
+			sourceTree = "<group>";
+		};
+		6BB1474B22E70C42003FBB79 /* Onboarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BB1474A22E70C42003FBB79 /* Base */,
+			);
+			name = Onboarding.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -395,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -456,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

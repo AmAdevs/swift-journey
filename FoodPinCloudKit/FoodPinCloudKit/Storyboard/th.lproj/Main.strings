@@ -1,0 +1,84 @@
+/* Class = "UIButton"; normalTitle = "Rate it"; ObjectID = "1hX-Dw-VaL"; */
+"1hX-Dw-VaL.normalTitle" = "Rate it";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "7fh-ko-Aco"; */
+"7fh-ko-Aco.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Happy"; ObjectID = "8cB-J6-iAL"; */
+"8cB-J6-iAL.normalTitle" = "Happy";
+
+/* Class = "UILabel"; text = "Subsection Title"; ObjectID = "8Ry-xy-mQd"; */
+"8Ry-xy-mQd.text" = "Subsection Title";
+
+/* Class = "UIButton"; normalTitle = "Sad"; ObjectID = "08z-Ft-ww9"; */
+"08z-Ft-ww9.normalTitle" = "Sad";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "BaQ-oa-iNC"; */
+"BaQ-oa-iNC.text" = "สถานที่";
+
+/* Class = "UITextView"; text = "A great restaurant try out"; ObjectID = "Bua-8b-bhy"; */
+"Bua-8b-bhy.text" = "เป็นร้านอาหารที่ดีต้องลองไป";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant phone"; ObjectID = "Cpd-Wt-Ffe"; */
+"Cpd-Wt-Ffe.placeholder" = "เติมเบอร์โทรศัพท์ให้ครบถ้วน";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant address"; ObjectID = "cwq-kJ-oeB"; */
+"cwq-kJ-oeB.placeholder" = "กรอกข้อมูลที่อยู่ร้านอาหาร";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dYa-fL-Lzg"; */
+"dYa-fL-Lzg.text" = "Label";
+
+/* Class = "UILabel"; text = "PHONE"; ObjectID = "e3a-BR-4ng"; */
+"e3a-BR-4ng.text" = "เบอร์โทรศัพท์";
+
+/* Class = "UINavigationItem"; title = "New Restaurant"; ObjectID = "gs4-yA-qYs"; */
+"gs4-yA-qYs.title" = "ร้านอาหารใหม่ ใหม่";
+
+/* Class = "UILabel"; text = "DESCRIPTION"; ObjectID = "Gx6-KR-DGk"; */
+"Gx6-KR-DGk.text" = "รายละเอียด";
+
+/* Class = "UITabBarItem"; title = "Favorite"; ObjectID = "JNA-8i-g8d"; */
+"JNA-8i-g8d.title" = "โปรดปราน";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "KNF-h5-bFS"; */
+"KNF-h5-bFS.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "FoodPin"; ObjectID = "Lc7-7q-ZGe"; */
+"Lc7-7q-ZGe.title" = "FoodPin";
+
+/* Class = "UIButton"; normalTitle = "Cool"; ObjectID = "LGU-gy-1Y8"; */
+"LGU-gy-1Y8.normalTitle" = "Cool";
+
+/* Class = "UIButton"; normalTitle = "Love"; ObjectID = "nUX-Oa-xjx"; */
+"nUX-Oa-xjx.normalTitle" = "Love";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant type"; ObjectID = "oWI-eH-pNq"; */
+"oWI-eH-pNq.placeholder" = "กรอกข้อมูลประเภทของร้านอาหาร";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QU1-X6-3xF"; */
+"QU1-X6-3xF.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Angry"; ObjectID = "Rc9-Zq-jYE"; */
+"Rc9-Zq-jYE.normalTitle" = "Angry";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "vDA-e9-cgw"; */
+"vDA-e9-cgw.text" = "ชนิด";
+
+/* Class = "UILabel"; text = "NAME"; ObjectID = "VIQ-xR-dcX"; */
+"VIQ-xR-dcX.text" = "ชื่อ";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "wZq-Rp-Xio"; */
+"wZq-Rp-Xio.title" = "Item";
+
+/* Class = "UILabel"; text = "ADDRESS"; ObjectID = "xRC-Ug-3FM"; */
+"xRC-Ug-3FM.text" = "ที่อยู่";
+
+/* Class = "UILabel"; text = "TYPE"; ObjectID = "Y2x-To-mqY"; */
+"Y2x-To-mqY.text" = "ประเภท";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant name"; ObjectID = "YIv-fk-dAw"; */
+"YIv-fk-dAw.placeholder" = "กรอกข้อมูลชื่อร้านอาหาร";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "zme-PJ-MZ2"; */
+"zme-PJ-MZ2.text" = "ชื่อ";
+

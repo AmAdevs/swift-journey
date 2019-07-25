@@ -28,6 +28,7 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
     
     @IBAction func skipButtonTapped(sender: UIButton) {
         UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
+        createQuickAction()
         dismiss(animated: true, completion: nil)
     }
     
@@ -46,6 +47,7 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
                 walkthroughPageViewController?.forwardPage()
             case 2:
                 UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
+                createQuickAction()
                 dismiss(animated: true, completion: nil)
             default:
                 break
@@ -75,6 +77,18 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
     
     func didUpdatePageIndex(currentIndex: Int) {
         updateUI()
+    }
+    
+    func createQuickAction() {
+        // Add Quick Actions
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+            if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                let shortcutItem1 = UIApplicationShortcutItem(type: "\(bundleIdentifier).OpenFavorites", localizedTitle: "Favorite", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "favorite"), userInfo: nil)
+                let shortcutItem2 = UIApplicationShortcutItem(type: "\(bundleIdentifier).OpenDiscover", localizedTitle: "Discover", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "discover"), userInfo: nil)
+                let shortcutItem3 = UIApplicationShortcutItem(type: "\(bundleIdentifier).NewRestaurant", localizedTitle: "New Restaurant", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .add), userInfo: nil)
+                UIApplication.shared.shortcutItems = [shortcutItem1, shortcutItem2, shortcutItem3]
+            }
+        }
     }
     
 

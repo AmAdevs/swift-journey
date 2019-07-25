@@ -97,6 +97,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    enum QuickAction: String {
+        case OpenFavorite = "OpenFavorites"
+        case OpenDiscover = "OpenDiscover"
+        case NewRestaurant = "NewRestaurant"
+        
+        init?(fullIdentifer: String) {
+            
+            guard let shortcutIdentifier = fullIdentifer.components(separatedBy: ".").last else {
+                return nil
+            }
+            
+            self.init(rawValue: shortcutIdentifier)
+        }
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleQuickAction(shortcutItem: shortcutItem))
+    }
+    
+    private func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        let shortcutType = shortcutItem.type
+        print(shortcutType)
+        guard let shortcutIdentifier = QuickAction(fullIdentifer: shortcutType) else {
+            return false
+        }
+        
+        print(shortcutType)
+        guard let tabBarController = window?.rootViewController as? UITabBarController else {
+            return false
+        }
+        
+        switch shortcutIdentifier{
+        case .OpenFavorite:
+            tabBarController.selectedIndex = 0
+        case .OpenDiscover:
+            tabBarController.selectedIndex = 1
+        case .NewRestaurant:
+            if let navController = tabBarController.viewControllers?[0] {
+                let restaurantTableViewController = navController.children[0]
+                restaurantTableViewController.performSegue(withIdentifier: "addNewRestaurant", sender: restaurantTableViewController)
+            } else {
+                return false
+            }
+        }
+    
+        return true
+    }
+
 
 }
 

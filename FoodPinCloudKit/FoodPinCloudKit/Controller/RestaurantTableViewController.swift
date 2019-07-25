@@ -12,7 +12,6 @@ import CoreData
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
 
-    
     var cellId = "cell"
     
     var restaurants: [RestaurantMO] = []
@@ -80,6 +79,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             } catch {
                 print(error)
             }
+        }
+        
+        // Peek and Pop
+        if (traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self as UIViewControllerPreviewingDelegate, sourceView: view)
         }
     
         
@@ -229,7 +233,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "restaurantShowDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let destinationController = segue.destination as! restaurantDetailViewController
+                let destinationController = segue.destination as! RestaurantDetailViewController
                     destinationController.restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
                     destinationController.hidesBottomBarWhenPushed = true //hide bottomBar on Push
                 
@@ -307,4 +311,39 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
     
+
+    
+    
+}
+
+extension RestaurantTableViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView.indexPathForRow(at: location) else {
+            return nil
+        }
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return nil
+        }
+        
+        guard let restaurantDetailViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as? RestaurantDetailViewController else {
+            return nil
+        }
+        
+        let selectRestaurant = restaurants[indexPath.row]
+        restaurantDetailViewController.restaurant = selectRestaurant
+        restaurantDetailViewController.preferredContentSize = CGSize(width: 0.0, height: 460.0)
+    
+        previewingContext.sourceRect = cell.frame
+        
+        return restaurantDetailViewController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
+    }
+    
+
 }

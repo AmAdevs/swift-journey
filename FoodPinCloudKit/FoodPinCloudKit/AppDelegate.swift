@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Customize the tab bar
         UITabBar.appearance().tintColor = UIColor(red: 231, green: 76, blue: 60)
         UITabBar.appearance().backgroundColor = .black
+        
+        
+        // Notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {
+        (granted, error) in
+            if granted {
+                print("User Notification are allows")
+            } else {
+                print("Uesr Notification are not allows")
+            }
+        })
         
         return true
     }

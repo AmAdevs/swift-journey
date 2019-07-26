@@ -315,30 +315,49 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     // Prepare Notification
     func prepareNotification() {
+        
+        
         // Make sure the restaurant array is not empty
         if restaurants.count <= 0 {
             return
         }
         
-        
         // Pick a restaurant randomly
         let randomNum = Int.random(in: 0..<restaurants.count)
         let suggestedRestaurant = restaurants[randomNum]
         
-        
+        // Get the image
+        let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        let tempFileURL = tempDirURL.appendingPathComponent("suggested-restaurant.jpg")
+        print(tempDirURL)
         // Create the user notification
         let content = UNMutableNotificationContent()
-        content.title = "Restaurant Recommentation"
+        
+        content.title = "Restaurant Recommendation"
         content.subtitle = "Try new food today"
-        content.body = "I recommend you to check out \(suggestedRestaurant.name!). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location!) Would you like to give it a try? "
+        content.body = "I recommend you to check out \(suggestedRestaurant.name!). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location!). Would you like to give it a try?"
         content.sound = UNNotificationSound.default
+        
+        if let image = UIImage(data: suggestedRestaurant.image! as Data) {
+            
+            try? image.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)
+            if let restaurantImage = try? UNNotificationAttachment(identifier: "restaurantImage1", url: tempFileURL, options: nil) {
+                content.attachments = [restaurantImage]
+            }
+        }
+        
+        let categoryIdentifer = "foodpin.restaurantaction"
+        let makeReservationAction = UNNotificationAction(identifier: "foodpin.makeReservation", title: "Reserve a table", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "foodpin.cancel", title: "Later", options: [])
+        let category = UNNotificationCategory(identifier: categoryIdentifer, actions: [makeReservationAction, cancelAction], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        content.categoryIdentifier = categoryIdentifer
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: "foodpin.restaurantSuggestion", content: content, trigger: trigger)
         
         // Schedule the notification
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
     }
     
 

@@ -338,6 +338,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         content.body = "I recommend you to check out \(suggestedRestaurant.name!). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location!). Would you like to give it a try?"
         content.sound = UNNotificationSound.default
         
+        content.userInfo = ["phone": suggestedRestaurant.phone!]
+        
+        
         if let image = UIImage(data: suggestedRestaurant.image! as Data) {
             
             try? image.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)

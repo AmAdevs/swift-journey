@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
         
+        // phone
+        UNUserNotificationCenter.current().delegate = self
+        
         return true
     }
 
@@ -162,3 +165,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if response.actionIdentifier == "foodpin.makeReservation" {
+            print("Make reservation...")
+            if let phone = response.notification.request.content.userInfo["phone"] {
+                let telURL = "tel://\(phone)"
+                if let url = URL(string: telURL) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        print("calling \(telURL)")
+                        UIApplication.shared.open(url)
+                    }
+                   
+                }
+            }
+        }
+        
+        completionHandler()
+        
+    }
+    
+}
